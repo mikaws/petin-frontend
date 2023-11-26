@@ -1,27 +1,18 @@
-# PetinAngularFrontend
+# Petin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
 
-## Development server
+A **Petin** veio para ajudar a conectar pessoas com o seu futuro amigão! O projeto é fruto de um trabalho de faculdade para a PUC Minas.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Instruções
+Para rodar a aplicação você precisará ter o Node.js baixado na sua máquina na versão LTS (de preferência a versão mais recente, que no momento é versão 18).
 
-## Code scaffolding
+## Estrutura
+**Backend:** será responsável por conter toda a regra de negócio da aplicação e conexão com o banco de dados, responderá o frontend os dados necessários que ele precisa
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Frontend:** será responsável por toda interface gráfica da aplicação e requisitará o backend para buscar dados e informações relevantes para que sejam mostrados de forma amigável
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## **[WIP]** A plataforma ainda está em desenvolvimento.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ainda estamos procurando um jeito de manter as coisas no lugar! Logo mais a aplicação estará disponível em uma versão estável.
