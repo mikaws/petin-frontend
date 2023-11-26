@@ -1,0 +1,17 @@
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;  border-radius: 45% 45% 0 0;
+  height: 31.1vh;
+  background-color: #7acfdf;
+  width: 100%;
+}
+
+.footer-container section {
+  margin-top: 50px;
+}
+
+.footer-container h4 {
+  color: var(--font-dark-grey);
+  font-weight: bold;
+}
