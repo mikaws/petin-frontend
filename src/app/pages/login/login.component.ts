@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { LoginHTTPRequestBody } from 'src/app/types/LoginDTO';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   public onSubmit(event: Event): void {
@@ -31,6 +33,7 @@ export class LoginComponent {
         if (status >= 200 && status < 300) {
           this.toastr.success('Bem-vindo!', 'Sucesso');
           localStorage.setItem('user', JSON.stringify(data));
+          this.router.navigateByUrl('/signup');
         } else {
           throw error;
         }
