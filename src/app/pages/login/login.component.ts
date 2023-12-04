@@ -33,7 +33,7 @@ export class LoginComponent {
         if (status >= 200 && status < 300) {
           this.toastr.success('Bem-vindo!', 'Sucesso');
           localStorage.setItem('user', JSON.stringify(data));
-          this.router.navigateByUrl('/signup');
+          this.router.navigateByUrl('/home');
         } else {
           throw error;
         }

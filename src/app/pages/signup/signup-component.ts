@@ -34,7 +34,6 @@ export class SignupComponent {
     this.signupService.signup(body).subscribe({
       next: ({ status, data, error }) => {
         if (status >= 200 && status < 300) {
-          console.log('ok');
           this.toastr.success('Bem-vindo!', 'Sucesso');
           localStorage.setItem('user', JSON.stringify(data));
         } else {

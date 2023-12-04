@@ -8,7 +8,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'home',
+    path: 'home', // trocar depois
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
@@ -21,6 +21,18 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () =>
       import('./pages/signup/signup.module').then((m) => m.SignupModule),
+  },
+  {
+    path: 'parceiros',
+    loadChildren: () =>
+      import('./pages/partners/partners.module').then((m) => m.PartnersModule),
+  },
+  {
+    path: 'anuncios',
+    loadChildren: () =>
+      import('./pages/advertisements/advertisements.module').then(
+        (m) => m.AdvertisementsModule
+      ),
   },
 ];
 

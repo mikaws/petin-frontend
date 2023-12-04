@@ -68,3 +68,13 @@ h1 {
 .blue-font {
   color: var(--blue);
 }
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
