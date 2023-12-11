@@ -16,7 +16,7 @@ export class AuthService {
       email: string;
       password: string;
     }[];
-    const user = users.find((user) => {
+    const user = (users ?? []).find((user) => {
       return user.email === body.email && user.password === body.password;
     });
     if (user) {
