@@ -4,8 +4,8 @@ export interface LoginHTTPRequestBody {
 }
 
 export interface LoginHTTPResponse {
-  status: 200;
-  data: {
+  status: 200 | 401;
+  data?: {
     id: string;
     email: string;
   };

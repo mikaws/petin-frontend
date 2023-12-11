@@ -32,14 +32,13 @@ export class LoginComponent {
       next: ({ status, data, error }) => {
         if (status >= 200 && status < 300) {
           this.toastr.success('Bem-vindo!', 'Sucesso');
-          localStorage.setItem('user', JSON.stringify(data));
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/anuncios');
         } else {
           throw error;
         }
       },
       error: (err) => {
-        this.toastr.error(err, 'Erro');
+        this.toastr.error('Email ou senha inválidos', 'Erro');
       },
     });
   }

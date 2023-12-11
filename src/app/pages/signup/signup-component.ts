@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { SignupHTTPRequestBody } from 'src/app/types/SignupDTO';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +23,8 @@ export class SignupComponent {
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private signupService: UserService
+    private signupService: UserService,
+    private router: Router
   ) {}
 
   public onSubmit(event: Event): void {
@@ -35,7 +37,12 @@ export class SignupComponent {
       next: ({ status, data, error }) => {
         if (status >= 200 && status < 300) {
           this.toastr.success('Bem-vindo!', 'Sucesso');
-          localStorage.setItem('user', JSON.stringify(data));
+          let users = localStorage.getItem('users')
+            ? JSON.parse(localStorage.getItem('users') ?? '')
+            : [];
+          users.push(body);
+          localStorage.setItem('users', JSON.stringify(users));
+          this.router.navigateByUrl('/login');
         } else {
           throw error;
         }
@@ -54,6 +61,7 @@ export class SignupComponent {
       cpf: this.form.get('cpf')?.value ?? '',
       name: this.form.get('name')?.value ?? '',
       rg: this.form.get('rg')?.value ?? '',
+      confirmPassword: this.form.get('confirmPassword')?.value ?? '',
     };
   }
 
@@ -65,6 +73,12 @@ export class SignupComponent {
       this.toastr.error('E-mail inválido!', 'Erro');
       return false;
     } else if (!body.password) {
+      this.toastr.error('Senha não preencida!', 'Erro');
+      return false;
+    } else if (
+      !body.confirmPassword ||
+      body.password !== body.confirmPassword
+    ) {
       this.toastr.error('Senha não preencida!', 'Erro');
       return false;
     }

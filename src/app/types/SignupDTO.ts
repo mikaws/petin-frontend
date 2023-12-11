@@ -5,6 +5,7 @@ export interface SignupHTTPRequestBody {
   rg: string;
   email: string;
   password: string;
+  confirmPassword: string;
 }
 
 export interface SignupHTTPResponse {

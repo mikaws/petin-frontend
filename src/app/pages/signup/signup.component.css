@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  height: 112vh;
+  height: 130vh;
 }
 
 .signup-container {
@@ -11,7 +11,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  height: 85vh;
   font-weight: bold;
 }
 
@@ -21,8 +20,9 @@
 
 .card {
   width: 20rem;
-  height: 13rem;
+  height: 31rem;
   padding: 2rem;
+  border-radius: 1rem;
 }
 
 .card .btn {
