@@ -1,9 +1,11 @@
 <nav class="navbar">
   <a href="/"><img src="assets/logo.svg" width="165"></a>
   <ul>
-    <li><a href="#">Parceiros</a></li>
-    <li><a href="#">Anúncios</a></li>
+    <li><a href="/anuncios">Anúncios</a></li>
     <li><a class="btn btn-transparent" type="button" href="/parceiros">Seja nosso parceiro</a></li>
-    <li><a class="btn btn-login" type="button" href="/login">Entrar</a></li>
+    <li *ngIf="!userLogged"><a class="btn btn-login" type="button" href="/login">Entrar</a></li>
+    <li *ngIf="userLogged">
+      <app-user-dropdown></app-user-dropdown>
+    </li>
   </ul>
 </nav>
